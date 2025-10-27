@@ -1,0 +1,520 @@
+\documentclass[12pt,a4paper]{report}
+
+% Required packages for official document formatting
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{tocloft}
+\usepackage{hyperref}
+
+% Set proper margins for official documents
+\geometry{
+    left=1in,
+    right=1in,
+    top=1in,
+    bottom=1in
+}
+
+% Define custom colors for official document
+\definecolor{govblue}{RGB}{0,51,102}
+\definecolor{govgray}{RGB}{102,102,102}
+\definecolor{secred}{RGB}{178,34,34}
+\definecolor{secgreen}{RGB}{0,128,0}
+\definecolor{secorange}{RGB}{255,140,0}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\color{govblue}\textbf{DEA Cybersecurity Resilience Roadmap}}
+\fancyhead[R]{\textit{Confidential}}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+% Custom commands for official formatting
+\newcommand{\sectionheader}[1]{\textbf{\color{govblue}#1}}
+\newcommand{\initiative}[1]{\textbf{\color{secgreen}\ding{51} #1}}
+\newcommand{\progress}[1]{\textit{#1}}
+\newcommand{\roadmap}[1]{\textbf{\color{secred}#1}}
+\newcommand{\highlight}[1]{\textcolor{secorange}{\textbf{#1}}}
+
+% Table of contents formatting
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\begin{document}
+
+% Ministry Letterhead
+\begin{center}
+    {\Large \textbf{GOVERNMENT OF INDIA}}\\
+    {\large \textbf{MINISTRY OF FINANCE}}\\
+    {\large \textbf{DEPARTMENT OF ECONOMIC AFFAIRS}}\\[0.3cm]
+    \includegraphics[width=2cm]{ashoka_emblem.png}\\[0.2cm]
+    % Note: Replace ashoka_emblem.png with actual emblem file
+\end{center}
+
+\vspace{0.3cm}
+
+% Document Title
+\begin{center}
+    {\Large \textbf{CYBERSECURITY RESILIENCE ROADMAP}}\\
+    {\large Department of Economic Affairs}\\[0.2cm]
+    {\large \textit{Initiatives, Progress, and Strategic Framework}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{flushright}
+    \textbf{Note No:} DEA/2025/SEC/001\\
+    \textbf{Date:} 27.10.2025\\
+    \textbf{Classification:} \textcolor{secred}{CONFIDENTIAL}
+\end{flushright}
+
+\vspace{0.5cm}
+
+% Executive Summary
+\sectionheader{EXECUTIVE SUMMARY}
+
+The Department of Economic Affairs (DEA) is implementing a comprehensive cybersecurity resilience framework to protect India's financial infrastructure and economic governance systems. This roadmap outlines current initiatives, implementation progress, and strategic direction for achieving robust cyber resilience by 2027.
+
+\textbf{Key Strategic Objectives:}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Protection of critical financial infrastructure and economic data
+    \item Implementation of zero-trust architecture across all DEA systems
+    \item Enhanced threat intelligence and incident response capabilities
+    \item Capacity building and awareness programs for all stakeholders
+    \item Compliance with national cybersecurity frameworks and international standards
+\end{itemize}
+
+\textbf{Investment Framework:} \textbf{Rs. 485 crore} allocated for cybersecurity initiatives over FY 2025-2027, with \textbf{Rs. 178 crore} earmarked for FY 2025-26.
+
+\tableofcontents
+\newpage
+
+% Section 1: Current Cybersecurity Landscape
+\chapter{CURRENT CYBERSECURITY LANDSCAPE}
+
+\sectionheader{1.1 Threat Environment Assessment}
+
+The Department of Economic Affairs faces an evolving cyber threat landscape characterized by:
+
+\subsection*{1.1.1 Primary Threat Vectors}
+\begin{enumerate}[leftmargin=*, itemsep=4pt]
+    \item \highlight{Advanced Persistent Threats (APTs)} targeting financial systems
+    \item \highlight{Ransomware attacks} on critical economic infrastructure
+    \item \highlight{Supply chain compromises} affecting financial software vendors
+    \item \highlight{Insider threats} from authorized users with malicious intent
+    \item \highlight{Phishing and social engineering} targeting DEA officials
+\end{enumerate}
+
+\subsection*{1.1.2 Current Risk Assessment}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Risk Category} & \textbf{Current Level} & \textbf{Target Level} \\
+\midrule
+Data Protection & Medium & Low \\
+Network Security & Medium-High & Low \\
+Application Security & Medium & Low \\
+Incident Response & Medium & Low \\
+Compliance & High & Low \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\sectionheader{1.2 Regulatory Framework}
+
+DEA cybersecurity operations are governed by:
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Information Technology Act, 2000 (as amended 2023)
+    \item CERT-In (Indian Computer Emergency Response Team) Directions 2022
+    \item National Cyber Security Policy 2013 (under revision)
+    \item Cybersecurity Framework for Financial Institutions (RBI Guidelines)
+    \item Data Protection Bill 2023 (pending implementation)
+\end{itemize}
+
+% Section 2: Current Security Architecture
+\chapter{CURRENT SECURITY ARCHITECTURE}
+
+\sectionheader{2.1 Infrastructure Overview}
+
+\subsection*{2.1.1 Network Architecture}
+DEA operates a multi-tiered network infrastructure:
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Core Network:} 285 servers across 4 data centers
+    \item \textbf{Protected Network:} 142 critical application servers
+    \item \textbf{DMZ Network:} 42 public-facing servers
+    \item \textbf{User Network:} 1,850+ employee workstations
+\end{itemize}
+
+\subsection*{2.1.2 Security Stack}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Security Layer} & \textbf{Implementation} \\
+\midrule
+Firewall Protection & Next-Gen Firewalls (Palo Alto Networks) \\
+Intrusion Detection & IDS/IPS systems (Cisco Firepower) \\
+Endpoint Protection & EDR solutions (CrowdStrike) \\
+Email Security & Advanced Threat Protection (Proofpoint) \\
+Data Encryption & AES-256 for data at rest and transit \\
+Identity Management & Multi-factor authentication \\
+Vulnerability Management & Regular penetration testing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\sectionheader{2.2 Current Security Operations}
+
+\subsection*{2.2.1 Security Operations Center (SOC)}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{24/7 Monitoring:} Dedicated SOC with 42 security analysts
+    \item \textbf{SIEM Implementation:} IBM QRadar platform for log analysis
+    \item \textbf{Threat Intelligence Integration:} Real-time threat feeds from MISP
+    \item \textbf{Incident Response:} Average response time: 2.3 hours
+\end{itemize}
+
+\subsection*{2.2.2 Compliance and Auditing}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{ISO 27001:2013} certified for information security management
+    \item \textbf{PCI DSS} compliance for payment system security
+    \item \textbf{Regular Audits:} Quarterly internal and annual external audits
+    \item \textbf{Risk Assessments:} Bi-annual comprehensive risk evaluations
+\end{itemize}
+
+% Section 3: Strategic Initiatives
+\chapter{STRATEGIC CYBERSECURITY INITIATIVES}
+
+\sectionheader{3.1 Zero Trust Architecture Implementation}
+
+\initiative{Project ZeroGuard (FY 2025-27)}
+\progress{Status: Phase I (30\% Complete)}
+
+\subsection*{Objectives:}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Eliminate traditional network perimeter assumptions
+    \item Implement identity-centric access controls
+    \item Enable continuous monitoring and verification
+    \item Minimize lateral movement for potential attackers
+\end{itemize}
+
+\subsection*{Implementation Components:}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Component} & \textbf{Timeline} & \textbf{Budget (Rs. crore)} \\
+\midrule
+Identity Access Management & Q1-Q3 FY 2025-26 & 45 \\
+Network Segmentation & Q2 FY 2025-26 & 28 \\
+Endpoint Security & Q3-Q4 FY 2025-26 & 37 \\
+Data Classification & Q1 FY 2026-27 & 22 \\
+Continuous Monitoring & Q2-Q4 FY 2026-27 & 41 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\sectionheader{3.2 Cloud Security Transformation}
+
+\initiative{Project CloudSecure (FY 2025-27)}
+\progress{Status: Planning Phase (15\% Complete)}
+
+\subsection*{Scope:}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Migration of 67\% of applications to secure cloud infrastructure
+    \item Implementation of Cloud Security Posture Management (CSPM)
+    \item Development of secure DevSecOps practices
+    \item Integration with national cloud security framework
+\end{itemize}
+
+\subsection*{Cloud Security Architecture:}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Infrastructure as Code (IaC):} Terraform-based secure deployments
+    \item \textbf{Container Security:} Kubernetes security policies and scanning
+    \item \textbf{API Security:} Gateway-level API protection and monitoring
+    \item \textbf{Data Protection:} Cloud-native encryption and key management
+\end{itemize}
+
+\sectionheader{3.3 Threat Intelligence Program}
+
+\initiative{Project ThreatWatch (FY 2025-26)}
+\progress{Status: Implementation Phase (45\% Complete)}
+
+\subsection*{Components:}
+\begin{enumerate}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Threat Intelligence Platform:} Integration with global threat feeds
+    \item \textbf{Dark Web Monitoring:} Continuous monitoring of cybercriminal forums
+    \item \textbf{Vulnerability Intelligence:} Proactive vulnerability scanning and assessment
+    \item \textbf{Indicators of Compromise (IoC) Database:} Comprehensive IoC repository
+\end{enumerate}
+
+\subsection*{Key Metrics:}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Threat Feeds:} 250+ integrated sources
+    \item \textbf{Daily IoCs Processed:} 15,000+ indicators
+    \item \textbf{False Positive Rate:} <5\%
+    \item \textbf{Threat Intelligence Sharing:} Active participation in FIN-CSIRT
+\end{itemize}
+
+% Section 4: Implementation Progress
+\chapter{IMPLEMENTATION PROGRESS}
+
+\sectionheader{4.1 Achievements to Date}
+
+\subsection*{4.1.1 Financial Year 2024-25 Achievements}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Initiative} & \textbf{Planned} & \textbf{Completed} \\
+\midrule
+Security Infrastructure Upgrade & 100\% & 100\% \\
+Endpoint Protection Deployment & 100\% & 100\% \\
+SIEM Implementation & 100\% & 100\% \\
+Security Awareness Training & 95\% & 98\% \\
+Vulnerability Management & 100\% & 100\% \\
+Incident Response Framework & 100\% & 90\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{4.1.2 Key Performance Indicators}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Security Incidents:} Reduced by 67\% (from 142 to 47 incidents annually)
+    \item \textbf{Mean Time to Detect (MTTD):} Improved from 72 hours to 4.2 hours
+    \item \textbf{Mean Time to Respond (MTTR):} Reduced from 48 hours to 2.3 hours
+    \item \textbf{Vulnerability Remediation:} 95\% of critical vulnerabilities patched within 7 days
+    \item \textbf{Security Awareness:} 98\% staff completion rate for training programs
+\end{itemize}
+
+\sectionheader{4.2 Ongoing Projects}
+
+\subsection*{4.2.1 Current Portfolio}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Project} & \textbf{Start Date} & \textbf{Completion} & \textbf{Status} \\
+\midrule
+Zero Trust Implementation & Apr 2025 & Mar 2027 & 30\% \\
+Cloud Security Migration & Jul 2025 & Jun 2027 & 15\% \\
+Threat Intelligence Platform & Jan 2025 & Dec 2025 & 45\% \\
+Security Operations Center Upgrade & Oct 2025 & Mar 2026 & 20\% \\
+Supply Chain Security Framework & Jan 2026 & Dec 2026 & 10\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{4.2.2 Budget Utilization}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{FY 2024-25 Allocation:} Rs. 125 crore
+    \item \textbf{Expenditure to Date:} Rs. 118 crore (94\% utilization)
+    \item \textbf{FY 2025-26 Allocation:} Rs. 178 crore
+    \item \textbf{Q1 Utilization:} Rs. 38 crore (85\% of quarterly target)
+\end{itemize}
+
+% Section 5: Roadmap to Resilience
+\chapter{ROADMAP TO RESILIENCE}
+
+\sectionheader{5.1 Strategic Timeline}
+
+\subsection*{5.1.1 Short-term Objectives (FY 2025-26)}
+\roadmap{Foundation Building}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Complete Zero Trust Architecture design and pilot implementation
+    \item Establish comprehensive threat intelligence capabilities
+    \item Upgrade Security Operations Center with AI-driven analytics
+    \item Implement advanced endpoint detection and response
+    \item Launch cybersecurity awareness and training program
+\end{itemize}
+
+\subsection*{5.1.2 Medium-term Objectives (FY 2026-27)}
+\roadmap{Operational Excellence}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Full deployment of Zero Trust Architecture across all systems
+    \item Complete cloud security transformation
+    \item Implement supply chain security framework
+    \item Establish cyber range for training and simulation
+    \item Achieve ISO 27001:2022 certification
+\end{itemize}
+
+\subsection*{5.1.3 Long-term Objectives (FY 2027-28)}
+\roadmap{Strategic Resilience}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item Implement predictive threat analytics using AI/ML
+    \item Establish quantum-resistant cryptography framework
+    \item Develop autonomous security operations capabilities
+    \item Achieve full compliance with emerging data protection regulations
+    \item Establish DEA as a cybersecurity excellence center
+\end{itemize}
+
+\sectionheader{5.2 Investment Framework}
+
+\subsection*{5.2.1 Budget Allocation}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Category} & \textbf{FY 2025-26} & \textbf{FY 2026-27} \\
+\midrule
+Infrastructure Modernization & Rs. 72 crore & Rs. 85 crore \\
+Security Operations & Rs. 48 crore & Rs. 62 crore \\
+Training and Awareness & Rs. 18 crore & Rs. 22 crore \\
+Research and Innovation & Rs. 25 crore & Rs. 38 crore \\
+Compliance and Audit & Rs. 15 crore & Rs. 18 crore \\
+\textbf{Total} & \textbf{Rs. 178 crore} & \textbf{Rs. 225 crore} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{5.2.2 Return on Investment}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Risk Reduction:} 85\% reduction in cyber risk exposure
+    \item \textbf{Operational Efficiency:} 40\% improvement in security operations
+    \item \textbf{Cost Avoidance:} Rs. 285 crore projected savings over 5 years
+    \item \textbf{Reputation Protection:} Maintaining public trust in financial systems
+\end{itemize}
+
+% Section 6: Partnerships and Collaboration
+\chapter{PARTNERSHIPS AND COLLABORATION}
+
+\sectionheader{6.1 Government Partnerships}
+
+\subsection*{6.1.1 National Security Ecosystem}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{CERT-In:} Active participation in national incident response
+    \item \textbf{NIC:} Collaboration on secure government network infrastructure
+    \item \textbf{NTRO:} Intelligence sharing on emerging cyber threats
+    \item \textbf{CBI:} Support for cybercrime investigation and prosecution
+\end{itemize}
+
+\subsection*{6.1.2 Financial Sector Collaboration}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{RBI:} Alignment with financial sector cybersecurity guidelines
+    \item \textbf{SEBI:} Coordination on market infrastructure protection
+    \item \textbf{IRDAI:} Collaboration on insurance sector security standards
+    \item \textbf{PFRDA:} Pension system security framework development
+\end{itemize}
+
+\sectionheader{6.2 International Cooperation}
+
+\subsection*{6.2.1 Multilateral Engagement}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Financial Action Task Force (FATF):} Cybersecurity standards development
+    \item \textbf{World Bank:} Technical assistance and knowledge sharing
+    \item \textbf{IMF:} Financial sector cybersecurity best practices
+    \item \textbf{ASEAN:} Regional cybersecurity cooperation initiatives
+\end{itemize}
+
+\subsection*{6.2.2 Public-Private Partnerships}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Technology Partners:} Collaboration with leading security vendors
+    \item \textbf{Academic Institutions:} Research partnerships with IITs and IISc
+    \item \textbf{Industry Associations:} Knowledge sharing with NASSCOM and DSCI
+    \item \textbf{Start-up Ecosystem:} Innovation partnerships with cyber security start-ups
+\end{itemize}
+
+% Section 7: Risk Management
+\chapter{RISK MANAGEMENT}
+
+\sectionheader{7.1 Risk Assessment Framework}
+
+\subsection*{7.1.1 Risk Categories}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Risk Category} & \textbf{Impact} & \textbf{Likelihood} \\
+\midrule
+Data Breach & Critical & Medium \\
+Ransomware Attack & High & Low-Medium \\
+Insider Threat & High & Low \\
+Supply Chain Compromise & High & Medium \\
+Service Disruption & High & Medium \\
+Compliance Violation & Medium & Low \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{7.1.2 Risk Mitigation Strategies}
+\begin{enumerate}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Preventive Controls:} Multi-layered security architecture
+    \item \textbf{Detective Controls:} Advanced monitoring and analytics
+    \item \textbf{Corrective Controls:} Incident response and recovery procedures
+    \item \textbf{Deterrent Controls:} Security awareness and training programs
+\end{enumerate}
+
+\sectionheader{7.2 Business Continuity Planning}
+
+\subsection*{7.2.1 Disaster Recovery Capabilities}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Recovery Time Objective (RTO):} 4 hours for critical systems
+    \item \textbf{Recovery Point Objective (RPO):} 15 minutes maximum data loss
+    \item \textbf{Backup Strategy:} 3-2-1 backup rule implementation
+    \item \textbf{Failover Sites:} Active-passive configuration with automatic failover
+\end{itemize}
+
+\subsection*{7.2.2 Crisis Management Framework}
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Incident Response Team:} Multi-disciplinary response team
+    \item \textbf{Communication Protocols:} Internal and external communication plans
+    \item \textbf{Decision Making Framework:} Clear escalation procedures
+    \item \textbf{Stakeholder Management:} Coordination with all relevant stakeholders
+\end{itemize}
+
+% Section 8: Conclusion
+\chapter{CONCLUSION}
+
+\sectionheader{8.1 Strategic Outlook}
+
+The Department of Economic Affairs is committed to building a world-class cybersecurity capability that protects India's financial infrastructure and supports economic growth. The roadmap outlined in this document provides a comprehensive framework for achieving cyber resilience through strategic investments, capability building, and collaborative partnerships.
+
+\sectionheader{8.2 Key Success Factors}
+
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+    \item \textbf{Leadership Commitment:} Strong support from senior leadership
+    \item \textbf{Resource Allocation:} Adequate funding and human resources
+    \item \textbf{Technical Excellence:} Adoption of best-in-class security technologies
+    \item \textbf{Continuous Improvement:} Regular assessment and enhancement
+    \item \textbf{Collaborative Approach:} Strong partnerships with stakeholders
+\end{itemize}
+
+\sectionheader{8.3 Next Steps}
+
+\begin{enumerate}[leftmargin=*, itemsep=4pt]
+    \item Obtain approval for the proposed investment framework
+    \item Establish project governance structures
+    \item Initiate procurement for identified security solutions
+    \item Launch comprehensive stakeholder engagement program
+    \item Establish monitoring and reporting mechanisms
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Prepared by:}\\
+    \textit{Cybersecurity Division}\\
+    \textit{Department of Economic Affairs}\\
+    \textit{Ministry of Finance}\\[0.5cm]
+    \textbf{Date:} 27.10.2025
+\end{center}
+
+\end{document}
