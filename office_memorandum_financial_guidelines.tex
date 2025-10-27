@@ -1,0 +1,179 @@
+\documentclass[12pt,a4paper]{article}
+
+% Required packages for official document formatting
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+
+% Set proper margins for official documents
+\geometry{
+    left=1in,
+    right=1in,
+    top=1in,
+    bottom=1in
+}
+
+% Define custom colors for official document
+\definecolor{govblue}{RGB}{0,51,102}
+\definecolor{govgray}{RGB}{102,102,102}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+% Custom command for official formatting
+\newcommand{\officeline}[1]{\textbf{#1}}
+\newcommand{\subjectline}[1]{\textit{#1}}
+
+\begin{document}
+
+% Ministry Letterhead
+\begin{center}
+    {\Large \textbf{GOVERNMENT OF INDIA}}\\
+    {\large \textbf{MINISTRY OF FINANCE}}\\
+    {\large \textbf{DEPARTMENT OF ECONOMIC AFFAIRS}}\\[0.3cm]
+    \includegraphics[width=2cm]{ashoka_emblem.png}\\[0.2cm]
+    % Note: Replace ashoka_emblem.png with actual emblem file
+\end{center}
+
+\vspace{0.5cm}
+
+% File Number and Date
+\begin{flushright}
+    \officeline{F.No. DEA/2025/OM/042}\\
+    \officeline{Date: 27.10.2025}
+\end{flushright}
+
+\vspace{0.5cm}
+
+% Document Title
+\begin{center}
+    {\Large \textbf{OFFICE MEMORANDUM}}
+\end{center}
+
+\vspace{0.5cm}
+
+% Subject
+\noindent
+\officeline{Subject:} \subjectline{Implementation of New Financial Reporting Guidelines for all Ministries and Departments}
+
+\vspace{0.5cm}
+
+% Salutation
+Sir/Madam,
+
+\vspace{0.3cm}
+
+% Main Content
+I am directed to state that in pursuance of the recommendations of the Committee on Financial Governance and with the approval of the Finance Minister, new Financial Reporting Guidelines have been formulated to standardize financial reporting across all Government of India Ministries and Departments.
+
+\vspace{0.3cm}
+
+\officeline{2. Background}\\
+The existing financial reporting framework has been in operation since 2010 and requires substantial enhancement to align with contemporary best practices in public financial management. The need for greater transparency, accountability, and comparability in financial reporting has become increasingly important in the current economic environment.
+
+\vspace{0.3cm}
+
+\officeline{3. Key Features of New Guidelines}\\
+The revised guidelines incorporate the following significant improvements:
+
+\begin{enumerate}
+    \item \textbf{Accrual-based Accounting}: Transition from cash-based to accrual-based accounting for better financial position reflection
+    \item \textbf{Unified Chart of Accounts}: Standardized account codes across all ministries and departments
+    \item \textbf{Enhanced Disclosure Requirements}: More comprehensive reporting of contingent liabilities and commitments
+    \item \textbf{Quarterly Financial Statements}: Mandatory quarterly reporting instead of annual reporting only
+    \item \textbf{Performance Indicators}: Integration of financial and non-financial performance metrics
+    \item \textbf{Audit Trail Requirements}: Strengthened documentation and audit trail provisions
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\officeline{4. Implementation Schedule}\\
+The implementation will be carried out in phases to ensure smooth transition:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Phase} & \textbf{Timeline} \\
+\midrule
+Phase I - System Preparation & 01.01.2026 to 31.03.2026 \\
+Phase II - Partial Implementation & 01.04.2026 to 30.09.2026 \\
+Phase III - Full Implementation & 01.10.2026 onwards \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\officeline{5. Training and Capacity Building}\\
+The Department of Expenditure will organize comprehensive training programs for all Finance Officers of Ministries and Departments. Details of the training schedule will be communicated separately. All ministries are requested to nominate officers for the training programs by 15.12.2025.
+
+\vspace{0.3cm}
+
+\officeline{6. Compliance Requirements}\\
+All Ministries and Departments are requested to:
+
+\begin{itemize}
+    \item Appoint a nodal officer for implementation of these guidelines
+    \item Conduct gap analysis of existing systems and processes
+    \item Submit implementation plans to this Department by 31.01.2026
+    \item Ensure compliance with the new reporting format from 01.10.2026
+\end{itemize}
+
+\vspace{0.3cm}
+
+\officeline{7. Support and Clarifications}\\
+For any clarifications or technical support regarding implementation of these guidelines, ministries may contact the Joint Secretary (Budget), Department of Expenditure at email: budget.dea@gov.in or phone: 011-23742301.
+
+\vspace{0.5cm}
+
+% Closing
+These guidelines have been issued with the approval of the competent authority and may be treated as effective from the date of issue.
+
+\vspace{1cm}
+
+% Signature Block
+\begin{flushleft}
+\officeline{(Rajesh Kumar)}\\
+\officeline{Joint Secretary to the Government of India}\\
+\officeline{Department of Economic Affairs}\\
+\officeline{Ministry of Finance}\\
+\officeline{New Delhi}\\[0.3cm]
+\officeline{Email: rajesh.kumar.dea@gov.in}\\
+\officeline{Phone: 011-23094215}
+\end{flushleft}
+
+\vspace{1cm}
+
+% Copy to
+\noindent
+\officeline{Copy to:}
+\begin{enumerate}
+    \item All Secretaries to the Government of India
+    \item Comptroller and Auditor General of India
+    \item Department of Expenditure for information and necessary action
+    \file Cabinet Secretariat for information
+    \item All Financial Advisors in Ministries/Departments
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent
+\officeline{Encl:} Detailed Financial Reporting Guidelines (As per Annexure-I)
+
+\end{document}
